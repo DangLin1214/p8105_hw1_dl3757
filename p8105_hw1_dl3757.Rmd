@@ -14,3 +14,14 @@ library(tidyverse)
 # Import the "ggplot2" library
 library(ggplot2)
 ```
+
+## Problem 1
+```{r, message = FALSE}
+# Load the "penguins" data
+data("penguins", package = "palmerpenguins")
+
+# Remove the missing values in the dataset
+penguins_clean <- penguins %>% na.omit()
+```
+
+The "penguins" dataset incorporates eight variables. Firstly, the dataset contains three species of penguins: Adelie, Gentoo, and Chinstrap, which are found on three different islands: Torgersen, Dream, and Biscoe. Besides, four numeric variables: bill length, bill depth, flipper length, and body mass of each penguin have been included in the dataset. Furthermore, this dataset also contains an ordinal variable "year", and a nominal data "sex" of the penguin. The "penguins" dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns, and the mean of flipper length is `r mean(penguins_clean$flipper_length_mm)` mm.
