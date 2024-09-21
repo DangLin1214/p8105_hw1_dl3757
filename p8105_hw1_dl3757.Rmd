@@ -40,3 +40,20 @@ ggplot(penguins_clean, aes(y = flipper_length_mm,
 # Export the scatterplot in PNG form
 ggsave("flipper_length_vs_bill_length.png")
 ```
+
+## Problem 2
+```{r}
+# Set seed for reproducibility
+set.seed(3757)
+
+# Create a data frame
+df <- tibble(
+  numeric_vector = rnorm(n = 10), 
+  logical_vector = numeric_vector > 0, 
+  character_vector = c("A", "B", "C", "D", "E", 
+                       "F", "G", "H", "I", "J"), 
+  
+  factor_vector = factor(rep(c("Level_1", "Level_2", "Level_3"), 
+                      length.out = 10))
+)
+```
