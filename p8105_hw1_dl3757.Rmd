@@ -57,3 +57,18 @@ df <- tibble(
                       length.out = 10))
 )
 ```
+
+```{r, warning = FALSE}
+# Take the mean of each variable in the data frame
+numeric_mean <- df %>% pull(numeric_vector) %>% mean()
+logical_mean <- df %>% pull(logical_vector) %>% mean()
+character_mean <- df %>% pull(character_vector) %>% mean()
+factor_mean <- df %>% pull(factor_vector) %>% mean() 
+
+numeric_mean
+logical_mean
+character_mean
+factor_mean
+```
+
+The mean of the numeric vector is 0.7582547, and the mean of the logical vector is 0.8. However, we cannot calculate the mean of the character and factor vectors, as they are not numeric.
