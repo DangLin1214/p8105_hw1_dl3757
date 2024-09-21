@@ -1,0 +1,16 @@
+---
+title: "p8105_hw1_dl3757"
+author: "Dang Lin dl3757"
+date: "2024-09-21"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r, message = FALSE}
+# Import the "tidyverse" library
+library(tidyverse)
+
+# Import the "ggplot2" library
+library(ggplot2)
+```
