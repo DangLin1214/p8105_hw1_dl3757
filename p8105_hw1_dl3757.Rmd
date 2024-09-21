@@ -72,3 +72,19 @@ factor_mean
 ```
 
 The mean of the numeric vector is 0.7582547, and the mean of the logical vector is 0.8. However, we cannot calculate the mean of the character and factor vectors, as they are not numeric.
+
+```{r, warning = FALSE, message = FALSE}
+# Convert the logical, character, and factor variables to the numeric variables
+logical_numeric <- as.numeric(df[["logical_vector"]])
+character_numeric <- as.numeric(df[["character_vector"]])
+factor_numeric <- as.numeric(df[["factor_vector"]])
+```
+
+```{r}
+# Take the mean of converted variables
+mean(logical_numeric)
+mean(character_numeric)
+mean(factor_numeric)
+```
+
+After the conversion, values in the logical variable are converted into 0 or 1, resulting in a mean of 0.8. However, we still cannot calculate the mean of the character variable after the conversion because characters cannot be converted into any numeric values. Surprisingly, after we applied the as.numeric() function to the factor variable, it assigned numeric values to different factor variable levels, with each level represented by a corresponding number. Therefore, we are able to calculate the mean of the factor variable after conversion, which is 1.9.
